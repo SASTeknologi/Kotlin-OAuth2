@@ -26,7 +26,7 @@ class CallRouter(
 	}
 
 	private fun routeTokenEndpoint(callContext: CallContext) {
-		if (callContext.method.toLowerCase() != METHOD_POST) {
+		if (callContext.method.lowercase() != METHOD_POST) {
 			return
 		}
 
@@ -117,7 +117,7 @@ class CallRouter(
 
 	private fun routeAuthorizeEndpoint(callContext: CallContext, credentials: Credentials?): RedirectRouterResponse {
 		try {
-			if (!arrayOf(METHOD_GET, METHOD_POST).contains(callContext.method.toLowerCase())) {
+			if (!arrayOf(METHOD_GET, METHOD_POST).contains(callContext.method.lowercase())) {
 				return RedirectRouterResponse(false)
 			}
 
@@ -142,7 +142,7 @@ class CallRouter(
 	}
 
 	private fun routeTokenInfoEndpoint(callContext: CallContext) {
-		if (callContext.method.toLowerCase() != METHOD_GET) {
+		if (callContext.method.lowercase() != METHOD_GET) {
 			return
 		}
 

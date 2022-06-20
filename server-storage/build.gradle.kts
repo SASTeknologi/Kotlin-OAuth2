@@ -13,6 +13,10 @@ sourceSets {
 	main.resources.srcDirs("res")
 }
 
+dependencies {
+	implementation(project(":server-core"))
+}
+
 publishing {
 	repositories {
 		maven {
@@ -24,6 +28,7 @@ publishing {
 			}
 		}
 	}
+
 	publications {
 		register<MavenPublication>("gpr") {
 			from(components["java"])

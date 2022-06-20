@@ -6,4 +6,4 @@ pluginManagement {
 	}
 }
 
-include(":server-core")
+include(":server-core", ":server-storage")
